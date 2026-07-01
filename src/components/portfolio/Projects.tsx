@@ -6,6 +6,7 @@ import tasks from "@/assets/project-tasks.jpg";
 import studyHive from "@/assets/project-study-hive.png";
 import career from "@/assets/career.png";
 import coffeeShop from "@/assets/coffee.png"; 
+import lms from "@/assets/lms.png";
 
 const projects = [
   {
@@ -53,6 +54,15 @@ const projects = [
     demo: "https://coffeeshopwebsite101.netlify.app",
     github: "https://github.com/eskedar12/coffee_shop_web",
   },
+  {
+  title: "Employee Leave Management System",
+  tag: "Full-Stack Web Application",
+  image: lms, // Make sure you have an image variable or path like: require("./images/lms.png")
+  description: "A bilingual (English/Amharic) web application for managing employee leave requests with Ethiopian calendar support. Features JWT authentication, role-based access, real-time notifications, automatic leave balance tracking, and an interactive dashboard for admins and employees.",
+  tech: ["React", "Node.js", "Express", "Sequelize", "MySQL", "JWT", "i18next", "Vite"],
+  demo: "https://lms-frontend-bkom.onrender.com",
+  github: "https://github.com/eskedar12/employee-leave-management-system",
+}
 ];
 
 type Project = (typeof projects)[number];
@@ -128,8 +138,8 @@ function MarqueeRow({ items, reverse = false, duration = 40 }: { items: Project[
 
 export function Projects() {
   // Split into 3 and 2 (first 3, remaining 2)
-  const rowA = projects.slice(0, 3); // First 3 projects
-  const rowB = projects.slice(3, 5); // Next 2 projects
+ const rowA = projects.slice(0, 3); // First 3 projects
+const rowB = projects.slice(3);    // All remaining projects (4, 5, 6) ✅
 
   return (
     <section id="projects" className="px-6 py-24 overflow-hidden">
